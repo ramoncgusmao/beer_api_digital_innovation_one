@@ -59,6 +59,7 @@ public class BeerService {
                 .orElseThrow(() -> new BeerNotFoundException(id));
     }
 
+
     public BeerDTO increment(Long id, int quantityToIncrement) throws BeerNotFoundException, BeerStockExceededException {
         Beer beerToIncrementStock = verifyIfExists(id);
         int quantityAfterIncrement = quantityToIncrement + beerToIncrementStock.getQuantity();
